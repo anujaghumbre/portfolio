@@ -1,0 +1,199 @@
+<head>
+  <link rel="stylesheet" href="style.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="contact.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- /Menu-->
+  <div id="header-nav">
+    <div class="container">
+      <!-- H1 for SEO -->
+      <div class="brand">
+        <a href="/">
+          <h1>Portfolio</h1>
+        </a>
+      </div>
+      <!-- Small screen menu button -->
+      <a href="#menu" class="menu-link">
+        <span class="bar1"></span>
+        <span class="bar2"></span>
+        <span class="bar3"></span>
+      </a>
+
+
+      <!-- Menu Items -->
+      <nav id="menu" role="navigation">
+        <ul>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- /Menu Items -->
+    </div>
+  </div>
+  <!-- /Menu -->
+
+  <!-- /Nav element -->
+  <div id="Home">
+    <img class="img-fluid" src="laptop.jpeg" height="100%" width="100%">
+    <div class="bg-text">
+      <h2>I am</h2>
+      <h1 style="font-size:50px"> Anuja Ghumbre</h1>
+      <p>I am java full stack developer</p>
+    </div>
+    // <div class="btn">
+    </div>
+  </div>
+  <div id="#Abo">
+    <main class="about">
+
+      <div class="container">
+        <div class="div">
+          <section class="grid info">
+            <div class="column-xs-12 column-md-1">
+              <div class="about">
+
+                <section id="#Abo">
+                  <h1 class="section-heading">About Me</h1>
+                </section>
+              </div>
+            </div>
+
+
+            <div class="column-xs-12 column-md-4">
+              <img src="anu3.jpeg" width="40%" height="60%" class="im">
+
+
+            </div>
+            <div class="column-xs-12 column-md-4">
+              <div class="intro">
+                <h2>Anuja Ghumbre </h2>
+                <p>I am full stack java developer.I have joined the kiran academy and started my journey towards the
+                  coding..At the starting I have faced many challanges but now I can say proudly that I can be a good
+                  developer. </p>
+                <p>I have learned so many things like Core java concepts like OOPS,Collection framework,exception
+                  handling,Multi-Threding and so on</p>
+                <p>In Advance java I have worked on projects and in it I have worked in Hibernate,JDBC,SpringBoot,MVC
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+
+
+
+      <script>
+        var TxtType = function (el, toRotate, period) {
+          this.toRotate = toRotate;
+          this.el = el;
+          this.loopNum = 0;
+          this.period = parseInt(period, 10) || 2000;
+          this.txt = '';
+          this.tick();
+          this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function () {
+          var i = this.loopNum % this.toRotate.length;
+          var fullTxt = this.toRotate[i];
+
+          if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+          } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+          }
+
+          this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+          var that = this;
+          var delta = 200 - Math.random() * 100;
+
+          if (this.isDeleting) { delta /= 2; }
+
+          if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+          } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+          }
+
+          setTimeout(function () {
+            that.tick();
+          }, delta);
+        };
+
+        window.onload = function () {
+          var elements = document.getElementsByClassName('typewrite');
+          for (var i = 0; i < elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+          }
+          // INJECT CSS
+          var css = document.createElement("style");
+          css.type = "text/css";
+          css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+          document.body.appendChild(css);
+        };
+      </script>
+
+
+
+      <section id="contact">
+
+
+        <div class="contact-wrapper">
+
+          <!---------------- 
+
+      CONTACT PAGE LEFT 
+    
+      ----------------->
+          <div class="container">
+            <form class="form-horizontal" role="form" method="post" action="#">
+
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message"></textarea>
+
+                  <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+                    <div class="button">
+                      <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+                    </div>
+                </div>
+              </div>
+
+
+              </button>
+      </section>
+      </form>
+  </div>
+
+
+
+
+  </div>
+
+</body>
